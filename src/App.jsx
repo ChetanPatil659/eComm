@@ -7,6 +7,7 @@ import Home from './Components/Home/Home';
 import SingleProduct from "./Components/Pages/SingleProduct"
 import Cart from "./Components/Pages/Cart"
 import Checkout from "./Components/Pages/Checkout"
+import './input.css'
 
 function App() {
   return (
