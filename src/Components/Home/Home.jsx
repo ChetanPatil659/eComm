@@ -1,12 +1,28 @@
 import React from "react";
 import Footer from '../Footer/Footer';
-import Carousel from "./HomeCarousel";
+
 import Product from '../Pages/ProductCard';
 
 const Home = () => {
   return (
     <div className="home_container">
-      <Carousel />
+        <section className="text-gray-600 body-font">
+  <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div className="lg:max-w-lg h-[400px] lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 overflow-hidden">
+      <img className="w-full h-full object-cover object-top rounded" alt="hero" src="https://i.pinimg.com/564x/c9/e3/48/c9e3481f21190766baffb6cd4a67fe78.jpg"/>
+    </div>
+    <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+      <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
+        {/* <br className="hidden lg:inline-block">readymade gluten</br> */}
+      </h1>
+      <p className="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+      <div className="flex justify-center">
+        <button className="inline-flex text-white bg-[#ed9957] hover:bg-[#d97c36] border-0 py-2 px-6 focus:outline-none rounded text-lg">Buy Now</button>
+        <button className="ml-4 inline-flex text-[#ed9957] bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section class="text-gray-600 body-font">
         <div class="container px-5 py-20 mx-auto">
