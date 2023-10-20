@@ -7,11 +7,11 @@ const Checkout = () => {
 
   const EmptyCart = () => {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12 py-5 bg-light text-center">
-            <h4 className="p-3 display-5">No item in Cart</h4>
-            <Link to="/" className="btn btn-outline-dark mx-4">
+      <div className="container mx-auto sm:px-4">
+        <div className="flex flex-wrap ">
+          <div className="md:w-full pr-4 pl-4 py-5 bg-gray-100 text-center">
+            <h4 className="p-6 display-5">No item in Cart</h4>
+            <Link to="/" className="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-gray-900 border-gray-900 hover:bg-gray-900 hover:text-white bg-white hover:bg-gray-900 mx-4">
               <i className="fa fa-arrow-left"></i> Continue Shopping
             </Link>
           </div>
@@ -33,23 +33,23 @@ const Checkout = () => {
     });
     return (
       <>
-        <div className="container py-5">
-          <div className="row my-4">
-            <div className="col-md-5 col-lg-4 order-md-last">
-              <div className="card mb-4">
-                <div className="card-header py-3 bg-light">
+        <div className="container mx-auto sm:px-4 py-5">
+          <div className="flex flex-wrap  my-4">
+            <div className="md:w-2/5 pr-4 pl-4 lg:w-1/3 pr-4 pl-4 order-md-last">
+              <div className="relative flex flex-col min-w-0 rounded break-words border bg-white border-1 border-gray-300 mb-4">
+                <div className="py-3 px-6 mb-0 bg-gray-200 border-b-1 border-gray-300 text-gray-900 py-3 bg-gray-100">
                   <h5 className="mb-0">Order Summary</h5>
                 </div>
-                <div className="card-body">
-                  <ul className="list-group list-group-flush">
-                    <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                <div className="flex-auto p-6">
+                  <ul className="flex flex-col pl-0 mb-0 border rounded border-gray-300 ">
+                    <li className="relative block py-3 px-6 -mb-px border border-r-0 border-l-0 border-gray-300 no-underline flex justify-between items-center border-0 px-0 pb-0">
                       Products ({totalItems})<span>${Math.round(subtotal)}</span>
                     </li>
-                    <li className="list-group-item d-flex justify-content-between align-items-center px-0">
+                    <li className="relative block py-3 px-6 -mb-px border border-r-0 border-l-0 border-gray-300 no-underline flex justify-between items-center px-0">
                       Shipping
                       <span>${shipping}</span>
                     </li>
-                    <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                    <li className="relative block py-3 px-6 -mb-px border border-r-0 border-l-0 border-gray-300 no-underline flex justify-between items-center border-0 px-0 mb-3">
                       <div>
                         <strong>Total amount</strong>
                       </div>
@@ -61,94 +61,94 @@ const Checkout = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-7 col-lg-8">
-              <div className="card mb-4">
-                <div className="card-header py-3">
+            <div className="md:w-3/5 pr-4 pl-4 lg:w-2/3 pr-4 pl-4">
+              <div className="relative flex flex-col min-w-0 rounded break-words border bg-white border-1 border-gray-300 mb-4">
+                <div className="py-3 px-6 mb-0 bg-gray-200 border-b-1 border-gray-300 text-gray-900 py-3">
                   <h4 className="mb-0">Billing address</h4>
                 </div>
-                <div className="card-body">
+                <div className="flex-auto p-6">
                   <form className="needs-validation" novalidate>
-                    <div className="row g-3">
-                      <div className="col-sm-6 my-1">
+                    <div className="flex flex-wrap  g-3">
+                      <div className="sm:w-1/2 pr-4 pl-4 my-1">
                         <label for="firstName" className="form-label">
                           First name
                         </label>
                         <input
                           type="text"
-                          className="form-control"
+                          className="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                           id="firstName"
                           placeholder=""
                           value=""
                           required
                         />
-                        <div className="invalid-feedback">
+                        <div className="hidden mt-1 text-sm text-red">
                           Valid first name is required.
                         </div>
                       </div>
 
-                      <div className="col-sm-6 my-1">
+                      <div className="sm:w-1/2 pr-4 pl-4 my-1">
                         <label for="lastName" className="form-label">
                           Last name
                         </label>
                         <input
                           type="text"
-                          className="form-control"
+                          className="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                           id="lastName"
                           placeholder=""
                           value=""
                           required
                         />
-                        <div className="invalid-feedback">
+                        <div className="hidden mt-1 text-sm text-red">
                           Valid last name is required.
                         </div>
                       </div>
 
-                      <div className="col-12 my-1">
+                      <div className="w-full my-1">
                         <label for="email" className="form-label">
                           Email
                         </label>
                         <input
                           type="email"
-                          className="form-control"
+                          className="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                           id="email"
                           placeholder="email@example.com"
                           required
                         />
-                        <div className="invalid-feedback">
+                        <div className="hidden mt-1 text-sm text-red">
                           Please enter a valid email address
                         </div>
                       </div>
 
-                      <div className="col-12 my-1">
+                      <div className="w-full my-1">
                         <label for="address" className="form-label">
                           Address
                         </label>
                         <input
                           type="text"
-                          className="form-control"
+                          className="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                           id="address"
                           placeholder="street House No"
                           required
                         />
-                        <div className="invalid-feedback">
+                        <div className="hidden mt-1 text-sm text-red">
                           Please enter your shipping address.
                         </div>
                       </div>
 
-                      <div className="col-12">
+                      <div className="w-full">
                         <label for="address2" className="form-label">
                           Address 2{" "}
-                          <span className="text-muted">(Optional)</span>
+                          <span className="text-gray-700">(Optional)</span>
                         </label>
                         <input
                           type="text"
-                          className="form-control"
+                          className="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                           id="address2"
                           placeholder="Apartment or suite"
                         />
                       </div>
 
-                      <div className="col-md-5 my-1">
+                      <div className="md:w-2/5 pr-4 pl-4 my-1">
                         <label for="country" className="form-label">
                           Country
                         </label>
@@ -159,12 +159,12 @@ const Checkout = () => {
                           <option>Korea</option>
                           <option>London</option>
                         </select>
-                        <div className="invalid-feedback">
+                        <div className="hidden mt-1 text-sm text-red">
                           Please select a valid country.
                         </div>
                       </div>
 
-                      <div className="col-md-4 my-1">
+                      <div className="md:w-1/3 pr-4 pl-4 my-1">
                         <label for="state" className="form-label">
                           State
                         </label>
@@ -176,23 +176,23 @@ const Checkout = () => {
                           <option>Sindh</option>
                           <option>Balochistan</option>
                         </select>
-                        <div className="invalid-feedback">
+                        <div className="hidden mt-1 text-sm text-red">
                           Please provide a valid state.
                         </div>
                       </div>
 
-                      <div className="col-md-3 my-1">
+                      <div className="md:w-1/4 pr-4 pl-4 my-1">
                         <label for="zip" className="form-label">
                           Zip
                         </label>
                         <input
                           type="text"
-                          className="form-control"
+                          className="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                           id="zip"
                           placeholder=""
                           required
                         />
-                        <div className="invalid-feedback">
+                        <div className="hidden mt-1 text-sm text-red">
                           Zip code required.
                         </div>
                       </div>
@@ -201,7 +201,7 @@ const Checkout = () => {
                     <hr className="my-4" />
 
                     <h4 className="mb-3">Payment</h4>
-                    <div className="col-md-3 my-1">
+                    <div className="md:w-1/4 pr-4 pl-4 my-1">
                       <input type="radio" id="COD" value="option1" name="payment" />
                       <label for="option1">Cash On Delivery</label>
                          <br/>
@@ -210,7 +210,7 @@ const Checkout = () => {
                     </div>
 
                     <button
-                      className="w-100 btn btn-dark "
+                      className="w-full inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-gray-900 text-white hover:bg-gray-900 "
                       type="submit" disabled
                     >
                       Continue to checkout
@@ -226,7 +226,7 @@ const Checkout = () => {
   };
   return (
     <>
-      <div className="container my-3 py-3">
+      <div className="container mx-auto sm:px-4 my-3 py-3">
         <h1 className="text-center">Checkout</h1>
         <hr />
         {state.length ? <ShowCheckout /> : <EmptyCart />}

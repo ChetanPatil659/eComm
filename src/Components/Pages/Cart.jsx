@@ -10,12 +10,13 @@ const Cart = () => {
 
   const EmptyCart = () => {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12 py-5 bg-light text-center">
-            <h4 className="p-3 display-5">Your Cart is Empty</h4>
-            <Link to="/" className="btn  btn-outline-dark mx-4">
-              <i className="fa fa-arrow-left"></i> Continue Shopping
+      <div className="container mx-auto sm:px-4 flex items-center justify-center">
+        <div className="flex flex-wrap h-full w-full">
+          <div className="md:w-full pr-4 pl-4 py-5 bg-gray-100 text-center">
+            <h4 className="p-6 display-5">Your Cart is Empty</h4>
+            <Link to='/' className=" lg:inline-block py-2 px-6 bg-[#ed9957] hover:bg-[#d97c36] relative text-sm text-white font-bold rounded-xl transition duration-200" href="#">
+              Continue Shopping
+
             </Link>
           </div>
         </div>
@@ -43,129 +44,85 @@ const Cart = () => {
     });
     return (
       <>
-        <section className="h-100 gradient-custom">
-          <div className="container py-5">
-            <div className="row d-flex justify-content-center my-4">
-              <div className="col-md-8">
-                <div className="card mb-4">
-                  <div className="card-header py-3">
-                    <h5 className="mb-0">Item List</h5>
-                  </div>
-                  <div className="card-body">
-                    {state.map((item) => {
-                      return (
-                        <div key={item.id}>
-                          <div className="row d-flex align-items-center">
-                            <div className="col-lg-3 col-md-12">
-                              <div
-                                className="bg-image rounded"
-                                data-mdb-ripple-color="light"
-                              >
-                                <img
-                                  src={item.image}
-                                  alt={item.title}
-                                  width={100}
-                                  height={75}
-                                />
-                              </div>
-                            </div>
 
-                            <div className="col-lg-5 col-md-6">
-                              <p>
-                                <strong>{item.title}</strong>
-                              </p>
-                            </div>
+        <div class="h-screen bg-gray-100 pt-20">
+          <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
+          <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
+            <div class="rounded-lg md:w-2/3">
+              {state.map((data) => {
+                return (
+                  <div key={state.id} class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
+                    <img src={data.image} alt="product-image" class="w-full rounded-lg sm:w-40" />
+                    <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
+                      <div class="mt-5 sm:mt-0">
+                        <h2 class="text-lg font-bold text-gray-900">{data.title}</h2>
+                        <p class="mt-1 text-xs text-gray-700">$ {data.price}</p>
+                      </div>
+                      <div class="mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+                        <div class="flex items-center border-gray-100">
+                          <span class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
+                            onClick={() => {
+                    
+                              removeItem(data);
+                            }}
+                          > - </span>
+                          <input class="h-8 w-8 border bg-white text-center text-xs outline-none" type="number" value="1" min="1" />
+                          <span class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
+                            onClick={() => {
+                              addItem(data);
 
-                            <div className="col-lg-4 col-md-6">
-                              <div
-                                className="d-flex mb-4"
-                                style={{ maxWidth: "300px" }}
-                              >
-                                <button
-                                  className="btn px-3"
-                                  onClick={() => {
-                                    removeItem(item);
-                                  }}
-                                >
-                                  <i class="uil uil-minus"></i>
-                                </button>
-
-                                <p className="mx-5">{item.qty}</p>
-
-                                <button
-                                  className="btn px-3"
-                                  onClick={() => {
-                                    addItem(item);
-                                  }}
-                                >
-                                  <i class="uil uil-plus"></i>
-                                </button>
-                              </div>
-
-                              <p className="text-start text-md-center">
-                                <strong>
-                                  <span className="text-muted">{item.qty}</span>{" "}
-                                  x ${item.price}
-                                </strong>
-                              </p>
-                            </div>
-                          </div>
-
-                          <hr className="my-4" />
+                            }}
+                          > + </span>
                         </div>
-                      );
-                    })}
+                        <div class="flex items-center space-x-4">
+                          <p class="text-sm">$ {subtotal}</p>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                )
+              })}
+
+
+            </div>
+
+            <div class="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
+              <div class="mb-2 flex justify-between">
+                <p class="text-gray-700">Subtotal</p>
+                <p class="text-gray-700">$ {subtotal}</p>
+              </div>
+              <div class="flex justify-between">
+                <p class="text-gray-700">Shipping</p>
+                <p class="text-gray-700">$4.99</p>
+              </div>
+              <hr class="my-4" />
+              <div class="flex justify-between">
+                <p class="text-lg font-bold">Total</p>
+                <div class="">
+                  <p class="mb-1 text-lg font-bold">${Math.round(subtotal)}</p>
+                  <p class="text-sm text-gray-700">including VAT</p>
                 </div>
               </div>
-              <div className="col-md-4">
-                <div className="card mb-4">
-                  <div className="card-header py-3 bg-light">
-                    <h5 className="mb-0">Order Summary</h5>
-                  </div>
-                  <div className="card-body">
-                    <ul className="list-group list-group-flush">
-                      <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                        Products ({totalItems})<span>${Math.round(subtotal)}</span>
-                      </li>
-                      <li className="list-group-item d-flex justify-content-between align-items-center px-0">
-                        Shipping
-                        <span>${shipping}</span>
-                      </li>
-                      <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-                        <div>
-                          <strong>Total amount</strong>
-                        </div>
-                        <span>
-                          <strong>${Math.round(subtotal + shipping)}</strong>
-                        </span>
-                      </li>
-                    </ul>
-
-                    <Link
-                      to="/checkout"
-                      className="btn btn-dark btn-lg btn-block"
-                    >
-                      Go to checkout
-                    </Link>
-                  </div>
-                </div>
-              </div>
+              <Link to='/checkout'><button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Checkout</button></Link>
             </div>
           </div>
-        </section>
+        </div>
+
       </>
     );
   };
 
   return (
     <>
-      <div className="container my-3 py-3">
+      <div className="w-screen py-3">
         {/* <h1 className="text-center">Cart</h1> */}
         <hr />
         {state.length > 0 ? <ShowCart /> : <EmptyCart />}
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
