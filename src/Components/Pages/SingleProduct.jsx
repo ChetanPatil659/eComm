@@ -26,17 +26,6 @@ const SingleProduct = () => {
   
   return (
     <>
-    {/* <div className="Product-card">
-      <div className="Product-Img">
-      <img src={product.image} alt={product.title} />
-      </div>
-      <div className="Product-Details">
-      <h2>{product.title}</h2>
-      <p id="Product-description">{product.description}</p>
-      <p id="Product-price">${q}</p>
-      <button onClick={() => addProduct(product)}>Add To Cart</button>
-      </div>
-    </div> */}
 
 <section class="text-gray-600 body-font overflow-hidden">
       <div class="container px-5 py-24 mx-auto">
