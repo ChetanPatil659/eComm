@@ -155,9 +155,9 @@ const Checkout = () => {
                         <br />
                         <select className="form-select" id="country" required>
                           <option value="">Choose...</option>
-                          <option>Pakistan</option>
-                          <option>Korea</option>
-                          <option>London</option>
+                          <option>India</option>
+                          <option>Japan</option>
+                          <option>Bharat</option>
                         </select>
                         <div className="hidden mt-1 text-sm text-red">
                           Please select a valid country.
@@ -171,10 +171,10 @@ const Checkout = () => {
                         <br />
                         <select className="form-select" id="state" required>
                           <option value="">Choose...</option>
-                          <option>Punjab</option>
-                          <option>KPK</option>
-                          <option>Sindh</option>
-                          <option>Balochistan</option>
+                          <option>Madhya Pradesh</option>
+                          <option>Maharastra</option>
+                          <option>Delhi</option>
+                          <option>Tokyo</option>
                         </select>
                         <div className="hidden mt-1 text-sm text-red">
                           Please provide a valid state.

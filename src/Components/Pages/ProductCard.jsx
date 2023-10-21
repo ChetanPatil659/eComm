@@ -49,13 +49,13 @@ const CategoryComponent = () => {
         <div class="grid lg:grid-cols-4 -m-4 gap-10">
 
           {selectedCategory === 'all' && allProducts.map((product) => (
-            <div class="grid lg:grid-cols-4 md:grid-cols-2 -m-4 gap-10">
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 -m-4 gap-10">
               <Link to={`/products/${product.id}`}>
                 <Products
                   title={product.title}
                   image={product.image}
                   price={product.price}
-
+                  category={product.category}
                 />
               </Link>
             </div>
