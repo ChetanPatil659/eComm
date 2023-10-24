@@ -10,7 +10,7 @@ let NavBar = () => {
             <nav className="relative px-4 py-4 flex justify-between items-center bg-white">
                 <Link to='/' className="text-3xl font-bold leading-none" href="#">
                     <div className='text-xl lg:text-2xl'>
-                        <h1>eComm<span className='text-[#ed9957]'>.IN</span></h1>
+                        <h1>eComm<span className='text-[#6366f1]'>.IN</span></h1>
                     </div>
                 </Link>
 
@@ -25,9 +25,9 @@ let NavBar = () => {
 
                     <li><a className="text-sm text-gray-400 hover:text-gray-500" href="#">Contact</a></li>
                 </ul>
-                <a className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-[#ed9957] font-bold  rounded-xl transition duration-200" href="#">Sign In</a>
+                <a className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-[#6366f1] font-bold  rounded-xl transition duration-200" href="#">Sign In</a>
                 <div className='flex'>
-                    <Link to='/cart' className=" lg:inline-block py-2 px-6 bg-[#ed9957] hover:bg-[#d97c36] relative text-sm text-white font-bold rounded-xl transition duration-200" href="#">
+                    <Link to='/cart' className=" lg:inline-block py-2 px-6 bg-[#6366f1] hover:bg-[#383983] relative text-sm text-white font-bold rounded-xl transition duration-200" href="#">
                         <i className="ri-shopping-cart-2-fill"></i>
                         {state.length != 0 &&
                             <div className='h-5 w-5 rounded-full bg-rose-600 flex items-center justify-center text-[12px] absolute top-[-5px] right-[-5px]'>{state.length}</div>

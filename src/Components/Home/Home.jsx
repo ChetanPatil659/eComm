@@ -17,8 +17,8 @@ const Home = () => {
       </h1>
       <p className="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
       <div className="flex justify-center">
-        <button className="inline-flex text-white bg-[#ed9957] hover:bg-[#d97c36] border-0 py-2 px-6 focus:outline-none rounded text-lg">Buy Now</button>
-        <button className="ml-4 inline-flex text-[#ed9957] bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Add to Cart</button>
+        <button className="inline-flex text-white bg-[#6366f1] hover:bg-[#383983] border-0 py-2 px-6 focus:outline-none rounded text-lg">Buy Now</button>
+        <button className="ml-4 inline-flex text-[#6366f1] bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Add to Cart</button>
       </div>
     </div>
   </div>

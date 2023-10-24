@@ -14,7 +14,7 @@ const Cart = () => {
         <div className="flex flex-wrap h-full w-full">
           <div className="md:w-full pr-4 pl-4 py-5 bg-gray-100 text-center">
             <h4 className="p-6 display-5">Your Cart is Empty</h4>
-            <Link to='/' className=" lg:inline-block py-2 px-6 bg-[#ed9957] hover:bg-[#d97c36] relative text-sm text-white font-bold rounded-xl transition duration-200" href="#">
+            <Link to='/' className=" lg:inline-block py-2 px-6 bg-[#6366f1] hover:bg-[#383983] relative text-sm text-white font-bold rounded-xl transition duration-200" href="#">
               Continue Shopping
 
             </Link>
@@ -106,7 +106,7 @@ const Cart = () => {
                   <p class="text-sm text-gray-700">including VAT</p>
                 </div>
               </div>
-              <Link to='/checkout'><button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Checkout</button></Link>
+              <Link to='/checkout'><button class="mt-6 w-full rounded-md bg-[#6366f1] py-1.5 font-medium text-blue-50 hover:bg-[#383983]">Checkout</button></Link>
             </div>
           </div>
         </div>
